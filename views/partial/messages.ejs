@@ -1,0 +1,53 @@
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1000">
+  <% if(success_msg != ''){ %>
+  <div
+    id="liveToast"
+    style="display: block"
+    class="toast"
+    role="alert"
+    aria-live="assertive"
+    aria-atomic="true"
+  >
+    <div class="toast-header">
+       <div style="background-color: green; width: 25px; height: 25px; border-radius: 5px; margin-right: 5px;">
+       </div>
+      <strong class="me-auto">Thành Công</strong>
+      <small>thành công!</small>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="toast"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="toast-body"><%= success_msg %></div>
+  </div>
+  <% } %>
+</div>
+
+<div class="position-fixed top-0 end-0 p-3" style="z-index: 1000">
+  <% if(error_msg != ''){ %>
+  <div
+    id="liveToast"
+    style="display: block"
+    class="toast"
+    role="alert"
+    aria-live="assertive"
+    aria-atomic="true"
+  >
+    <div class="toast-header">
+      <div style="background-color: red; width: 25px; height: 25px; border-radius: 5px; margin-right: 5px;">
+      </div>
+      <strong class="me-auto">Lỗi</strong>
+      <small>có lỗi!</small>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="toast"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="toast-body" style="color: red;"><%= error_msg %></div>
+  </div>
+  <% } %>
+</div>

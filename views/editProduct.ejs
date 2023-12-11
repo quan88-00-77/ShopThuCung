@@ -1,0 +1,83 @@
+<div style="width: 100%; padding: 15px 0px">
+    <div class="container mt-4 w-50">
+      <form action="/product/edit" method="post">
+        <input type="hidden" name="idProduct" value="<%= product._id  %> ">
+        <input type="hidden" name="_method" value="PUT">
+        <h1>Sửa sản phẩm</h1>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <div class="mb-3">
+                <label for="" class="form-label">Tên sản phẩm</label>
+                <input
+                required
+                  type="text"
+                  class="form-control"
+                  name="name"
+                  id="name"
+                  aria-describedby="helpId"
+                  placeholder=""
+                  value="<%= product.name %>"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="mb-3">
+                <label for="" class="form-label">Mô tả chi tiết</label>
+                <textarea
+                required
+                  type="text"
+                  minlength="10"
+                  rows="6"
+                  class="form-control"
+                  name="detail"
+                  id="detail"
+                  aria-describedby="helpId"
+                  placeholder=""
+                ><%= product.detail %> </textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row align-items-start">
+          <div class="col d-lg-flex justify-content-between">
+            <div class="form-group">
+              <div class="mb-3">
+                <label for="" class="form-label">Số lượng</label>
+                <input type="number" name="quantity" id="quantity" min="1" value='<%= product.quantity %>'>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="mb-3">
+                  <label for="" class="form-label">Giá</label>
+                  <input type="number" name="price" id="price" min="1" value="<%=product.price %>">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="mb-3">
+            <label for="" class="form-label">Hình ảnh</label>
+            <input
+            required
+              type="text"
+              class="form-control"
+              name="image"
+              id="image"
+              aria-describedby="helpId"
+              placeholder=""
+              value="<%= product.image %>"
+            />
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <label>ảnh hiện tại</label>
+            <img style="width: 350px; height: 250px; object-fit: cover;"  class="img-thumbnail" src="<%= product.image %>" alt="Anh San pham">
+          </div>
+        </div>
+          <button type="submit" class="btn btn-primary">Sửa</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  
